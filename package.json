@@ -1,0 +1,16 @@
+{
+  "name": "eslint-plugin-import-guard",
+  "description": "custom ESLint plugin designed to enforce import rules and other coding standards",
+  "version": "1.0.0",
+  "homepage": "https://github.com/harshitsilly/eslint-plugin-import-guard/master",
+  "author": "harshit886@outlook.com",
+  "license": "MIT",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": "^8.3.0",
+    "jest": "^27.4.3"
+  }
+}
