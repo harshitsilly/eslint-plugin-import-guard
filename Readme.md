@@ -174,45 +174,6 @@ export { Component }; // Invalid
 export default memo(forwardRef((props, ref) => <div ref={ref} />)); // Invalid
 ```
 
-#### Valid Examples:
-
-```tsx
-// Separate declaration and export with memo/forwardRef
-const Component = forwardRef((props, ref) => <div ref={ref} />);
-export default memo(Component);
-
-// Simple functional component
-const Input = () => <div />;
-export default Input;
-
-// Component with multiple exports
-const Button = ({ children }) => <button>{children}</button>;
-const ButtonWithIcon = ({ icon, children }) => (
-  <button>
-    {icon}
-    {children}
-  </button>
-);
-export { Button, ButtonWithIcon };
-export default Button;
-```
-
-#### Invalid Examples:
-
-```tsx
-// Inline memo(forwardRef()) in export
-export default memo(forwardRef((props, ref) => <div ref={ref} />));
-
-// Combined memo(forwardRef()) assignment
-const Test = memo(forwardRef((props, ref) => <input ref={ref} />));
-export default Test;
-
-// Mixed export patterns
-const Component = () => <div />;
-export default memo(Component);
-export { Component }; // Invalid - mixing default and named exports
-```
-
 ## Testing
 
 To run the test suite and ensure the plugin is functioning as expected:
